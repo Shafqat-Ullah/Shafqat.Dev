@@ -90,7 +90,7 @@ ${formData.description}
       }`}>
         
         {/* Header */}
-        <div className="p-5 sm:p-7 shrink-0 bg-gradient-to-r from-primary via-secondary to-accent text-white relative shadow-lg">
+        <div className="p-5 sm:p-7 shrink-0 bg-gradient-to-r from-primary via-secondary to-accent text-black relative shadow-lg">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-950/30 text-white flex items-center justify-center hover:bg-slate-950/60 transition-all border border-white/20"

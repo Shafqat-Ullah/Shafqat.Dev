@@ -13,7 +13,7 @@ const Team = () => {
       id: 1,
       name: 'Shafqat Ullah',
       role: 'Full Stack Developer & Lead',
-      image: './Images/shafqat.png',
+      image: './Images/shafqat_update.png',
       bio: 'Full Stack Developer with 2+ years of experience building high-performance web applications. I lead development teams efficiently, ensure clean scalable code, and manage end-to-end client deliverables.',
       github: 'https://github.com/Shafqat-Ullah',
       linkedin: 'https://www.linkedin.com/in/shafqat-ullah15305/',
@@ -130,7 +130,7 @@ const Team = () => {
                     target="_blank"
                     rel="noreferrer"
                     className={`w-11 h-11 rounded-full flex items-center justify-center text-lg transition-transform hover:scale-110 ${
-                      isDark ? 'bg-slate-800 hover:bg-primary text-slate-300 hover:text-white' : 'bg-white border hover:bg-primary text-slate-700 hover:text-white shadow-sm'
+                      isDark ? 'bg-slate-800 hover:bg-primary text-slate-300 hover:text-black' : 'bg-white border hover:bg-primary text-slate-700 hover:text-black shadow-sm'
                     }`}
                     aria-label="GitHub"
                   >
@@ -169,7 +169,7 @@ const Team = () => {
           <button
             onClick={prevSlide}
             className={`absolute top-1/2 -left-4 sm:-left-6 -translate-y-1/2 w-12 h-12 rounded-full border flex items-center justify-center shadow-xl transition-all hover:scale-110 ${
-              isDark ? 'bg-slate-900 border-slate-700 text-white hover:bg-primary' : 'bg-white border-slate-300 text-slate-900 hover:bg-primary hover:text-white'
+              isDark ? 'bg-slate-900 border-slate-700 text-white hover:bg-primary hover:text-black' : 'bg-white border-slate-300 text-slate-900 hover:bg-primary hover:text-black'
             }`}
             aria-label="Previous Team Member"
           >
@@ -179,7 +179,7 @@ const Team = () => {
           <button
             onClick={nextSlide}
             className={`absolute top-1/2 -right-4 sm:-right-6 -translate-y-1/2 w-12 h-12 rounded-full border flex items-center justify-center shadow-xl transition-all hover:scale-110 ${
-              isDark ? 'bg-slate-900 border-slate-700 text-white hover:bg-primary' : 'bg-white border-slate-300 text-slate-900 hover:bg-primary hover:text-white'
+              isDark ? 'bg-slate-900 border-slate-700 text-white hover:bg-primary hover:text-black' : 'bg-white border-slate-300 text-slate-900 hover:bg-primary hover:text-black'
             }`}
             aria-label="Next Team Member"
           >

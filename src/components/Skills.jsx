@@ -1,7 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Code2, Server, Wrench, Layout, Cpu, CheckCircle } from 'lucide-react';
+import { Code2, Server, Wrench, CheckCircle, Sparkles } from 'lucide-react';
 import Reveal from './Reveal';
+
+const AnimatedBar = ({ percentage, gradient }) => {
+  const ref = useRef(null);
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="h-3 rounded-full overflow-hidden p-0.5 bg-slate-200 dark:bg-slate-800">
+      <div
+        ref={ref}
+        className={`h-full rounded-full ${gradient} ${animated ? 'bar-fill' : ''}`}
+        style={{ width: `${percentage}%` }}
+      ></div>
+    </div>
+  );
+};
 
 const Skills = () => {
   const { isDark } = useTheme();
@@ -54,6 +87,9 @@ const Skills = () => {
         {/* Section Header */}
         <Reveal>
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-extrabold text-xs uppercase tracking-widest border border-primary/20 mb-4">
+            <Sparkles className="w-4 h-4" /> Expertise Profile
+          </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
             My Tech <span className="gradient-text">Skills</span>
           </h2>
@@ -69,7 +105,7 @@ const Skills = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           
           {/* Technical Skills */}
-          <div className={`p-8 rounded-3xl border ${
+          <div className={`p-8 rounded-3xl border card-hover ${
             isDark ? 'bg-slate-900/80 border-slate-800 shadow-xl' : 'bg-slate-50 border-slate-200 shadow-md'
           }`}>
             <div className="flex items-center gap-3 mb-8">
@@ -93,19 +129,14 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  <div className={`h-3 rounded-full overflow-hidden p-0.5 ${isDark ? 'bg-slate-800' : 'bg-slate-200'}`}>
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.percentage}%` }}
-                    ></div>
-                  </div>
+                  <AnimatedBar percentage={skill.percentage} gradient="bg-gradient-to-r from-primary via-secondary to-accent" />
                 </div>
               ))}
             </div>
           </div>
 
           {/* Professional Skills */}
-          <div className={`p-8 rounded-3xl border ${
+          <div className={`p-8 rounded-3xl border card-hover ${
             isDark ? 'bg-slate-900/80 border-slate-800 shadow-xl' : 'bg-slate-50 border-slate-200 shadow-md'
           }`}>
             <div className="flex items-center gap-3 mb-8">
@@ -129,12 +160,7 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  <div className={`h-3 rounded-full overflow-hidden p-0.5 ${isDark ? 'bg-slate-800' : 'bg-slate-200'}`}>
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-secondary via-accent to-primary transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.percentage}%` }}
-                    ></div>
-                  </div>
+                  <AnimatedBar percentage={skill.percentage} gradient="bg-gradient-to-r from-secondary via-accent to-primary" />
                 </div>
               ))}
             </div>
@@ -161,7 +187,7 @@ const Skills = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
                     activeTab === tab
-                      ? 'bg-primary text-white shadow-md'
+                      ? 'bg-primary text-black shadow-md'
                       : isDark ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
@@ -175,7 +201,7 @@ const Skills = () => {
             {filteredTech.map((tech, index) => (
               <div
                 key={index}
-                className={`p-5 rounded-2xl border text-center flex flex-col items-center justify-center gap-3 card-hover transition-all duration-300 ${
+                className={`group p-5 rounded-2xl border text-center flex flex-col items-center justify-center gap-3 card-hover transition-all duration-300 ${
                   isDark
                     ? 'bg-slate-900/90 border-slate-800/90 hover:bg-slate-800'
                     : 'bg-white border-slate-200 hover:bg-slate-50 shadow-sm'

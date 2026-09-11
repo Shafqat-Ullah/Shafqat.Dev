@@ -4,11 +4,11 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
+    const savedTheme = localStorage.getItem('shafqat_theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
       return savedTheme;
     }
-    return 'dark'; // Default to dark mode for ultra-sleek dark aesthetic
+    return 'light'; // Default to light (day) mode on every new visit
   });
 
   useEffect(() => {
@@ -16,15 +16,15 @@ export const ThemeProvider = ({ children }) => {
     if (theme === 'dark') {
       root.classList.add('dark');
       root.classList.remove('light');
-      document.body.style.backgroundColor = '#090d16';
-      document.body.style.color = '#f1f5f9';
+      document.body.style.backgroundColor = '#000000';
+      document.body.style.color = '#ffffff';
     } else {
       root.classList.add('light');
       root.classList.remove('dark');
       document.body.style.backgroundColor = '#f8fafc';
       document.body.style.color = '#0f172a';
     }
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('shafqat_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

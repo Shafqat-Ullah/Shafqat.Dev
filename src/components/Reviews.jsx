@@ -237,7 +237,7 @@ const Reviews = () => {
                 <button
                   onClick={handlePrev}
                   className={`w-11 h-11 rounded-full border flex items-center justify-center transition-all ${
-                    isDark ? 'bg-slate-800 border-slate-700 hover:bg-primary text-white' : 'bg-white border-slate-300 hover:bg-primary hover:text-white text-slate-800'
+                    isDark ? 'bg-slate-800 border-slate-700 hover:bg-primary hover:text-black text-white' : 'bg-white border-slate-300 hover:bg-primary hover:text-black text-slate-800'
                   }`}
                   aria-label="Previous Review"
                 >
@@ -246,7 +246,7 @@ const Reviews = () => {
                 <button
                   onClick={handleNext}
                   className={`w-11 h-11 rounded-full border flex items-center justify-center transition-all ${
-                    isDark ? 'bg-slate-800 border-slate-700 hover:bg-primary text-white' : 'bg-white border-slate-300 hover:bg-primary hover:text-white text-slate-800'
+                    isDark ? 'bg-slate-800 border-slate-700 hover:bg-primary hover:text-black text-white' : 'bg-white border-slate-300 hover:bg-primary hover:text-black text-slate-800'
                   }`}
                   aria-label="Next Review"
                 >

@@ -20,7 +20,7 @@ const Footer = ({ onOpenOrderModal }) => {
           {/* Brand */}
           <div className="text-center md:text-left">
             <a href="#home" className="inline-flex items-center gap-2.5 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-black font-bold">
                 <Code2 className="w-5 h-5" />
               </div>
               <span className="text-xl font-black text-white tracking-tight">Shafqat<span className="text-primary">.dev</span></span>
@@ -48,7 +48,7 @@ const Footer = ({ onOpenOrderModal }) => {
               href="https://github.com/Shafqat-Ullah"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary text-white flex items-center justify-center transition"
+              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-primary hover:text-black text-white flex items-center justify-center transition"
               aria-label="GitHub"
             >
               <i className="fab fa-github"></i>
@@ -89,7 +89,7 @@ const Footer = ({ onOpenOrderModal }) => {
 
           <button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-slate-800 text-white hover:bg-primary transition shadow-md flex items-center justify-center"
+            className="p-3 rounded-full bg-slate-800 text-white hover:bg-primary hover:text-black transition shadow-md flex items-center justify-center"
             title="Back to top"
           >
             <ArrowUp className="w-4 h-4" />

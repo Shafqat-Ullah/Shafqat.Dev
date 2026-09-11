@@ -50,20 +50,20 @@ const Navbar = ({ onOpenOrderModal }) => {
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? isDark
-          ? 'bg-night-bg/90 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3'
-          : 'bg-day-bg/90 backdrop-blur-md border-b border-day-border shadow-md py-3'
-        : 'bg-transparent py-5'
+        ? `translate-y-0 ${isDark
+          ? 'bg-night-bg/85 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.06] shadow-[0_10px_40px_-12px_rgba(0,0,0,0.8)] py-3'
+          : 'bg-day-bg/85 backdrop-blur-xl backdrop-saturate-150 border-b border-day-border shadow-md py-3'}`
+        : '-translate-y-full bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary via-secondary to-accent flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary via-secondary to-accent flex items-center justify-center text-black shadow-lg group-hover:scale-105 transition-transform duration-300">
               <Code2 className="w-6 h-6" />
             </div>
             <div className="flex flex-col">
@@ -143,7 +143,7 @@ const Navbar = ({ onOpenOrderModal }) => {
             {/* Quick Order Button */}
             <button
               onClick={() => onOpenOrderModal()}
-              className="relative group overflow-hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary via-secondary to-accent text-white font-bold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center gap-2"
+              className="relative group overflow-hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary via-secondary to-accent text-black font-bold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center gap-2"
             >
               <ShoppingBag className="w-4 h-4 group-hover:rotate-12 transition-transform" />
               <span>Order Project</span>
@@ -203,7 +203,7 @@ const Navbar = ({ onOpenOrderModal }) => {
                   setMobileMenuOpen(false);
                   onOpenOrderModal();
                 }}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-black font-bold shadow-lg flex items-center justify-center gap-2"
               >
                 <ShoppingBag className="w-5 h-5" />
                 <span>Place Project Order Now</span>

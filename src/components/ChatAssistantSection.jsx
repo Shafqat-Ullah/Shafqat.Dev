@@ -154,9 +154,9 @@ const ChatAssistantSection = ({ onOpenOrderModal }) => {
         }`}>
           
           {/* Top Bar */}
-          <div className="p-5 bg-gradient-to-r from-primary via-secondary to-accent text-white flex items-center justify-between shadow-md">
+          <div className="p-5 bg-gradient-to-r from-primary via-secondary to-accent text-black flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30">
+              <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-black border border-white/30">
                 <Bot className="w-6 h-6" />
               </div>
               <div>
@@ -170,7 +170,7 @@ const ChatAssistantSection = ({ onOpenOrderModal }) => {
 
             <button
               onClick={() => onOpenOrderModal()}
-              className="px-4 py-2 rounded-full bg-white/20 hover:bg-white text-white hover:text-slate-950 font-bold text-xs flex items-center gap-2 backdrop-blur-md transition"
+              className="px-4 py-2 rounded-full bg-white/20 hover:bg-white text-black hover:text-slate-950 font-bold text-xs flex items-center gap-2 backdrop-blur-md transition"
             >
               <ShoppingBag className="w-4 h-4" /> Order Project
             </button>
@@ -193,7 +193,7 @@ const ChatAssistantSection = ({ onOpenOrderModal }) => {
 
                 <div className={`max-w-[80%] rounded-2xl px-5 py-3.5 shadow-sm ${
                   msg.sender === 'user'
-                    ? 'bg-gradient-to-r from-primary to-secondary text-white rounded-tr-none'
+                    ? 'bg-gradient-to-r from-primary to-secondary text-black rounded-tr-none'
                     : isDark
                       ? 'bg-slate-800 border border-slate-700 text-slate-100 rounded-tl-none'
                       : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none'
@@ -234,7 +234,7 @@ const ChatAssistantSection = ({ onOpenOrderModal }) => {
                 className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition border ${
                   isDark
                     ? 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-primary hover:text-white'
-                    : 'bg-white border-slate-300 text-slate-700 hover:bg-primary hover:text-white'
+                    : 'bg-white border-slate-300 text-slate-700 hover:bg-primary hover:text-black'
                 }`}
               >
                 {q}
@@ -259,7 +259,7 @@ const ChatAssistantSection = ({ onOpenOrderModal }) => {
             
             <button
               onClick={() => handleSend()}
-              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm shadow-lg hover:scale-105 transition-all flex items-center gap-2 shrink-0"
+              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-primary to-secondary text-black font-bold text-sm shadow-lg hover:scale-105 transition-all flex items-center gap-2 shrink-0"
             >
               <Send className="w-4 h-4" /> Ask
             </button>

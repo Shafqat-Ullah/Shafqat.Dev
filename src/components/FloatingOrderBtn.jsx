@@ -6,7 +6,7 @@ const FloatingOrderBtn = ({ onOpenOrderModal }) => {
     <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-40">
       <button
         onClick={() => onOpenOrderModal()}
-        className="group relative flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-white font-extrabold text-xs sm:text-sm shadow-2xl shadow-primary/50 hover:scale-105 active:scale-95 transition-all duration-300 ring-2 sm:ring-4 ring-primary/20 backdrop-blur-md"
+        className="group relative flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-black font-extrabold text-xs sm:text-sm shadow-2xl shadow-primary/50 hover:scale-105 active:scale-95 transition-all duration-300 ring-2 sm:ring-4 ring-primary/20 backdrop-blur-md"
         title="Place Project Order Now"
       >
         <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">

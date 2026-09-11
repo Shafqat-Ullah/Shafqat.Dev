@@ -76,7 +76,7 @@ const About = ({ onOpenOrderModal }) => {
             <div className="relative w-full max-w-md aspect-square">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary to-secondary blur-2xl opacity-30"></div>
               <img
-                src={getImagePath('Images/shafqat-developer-desk.jpg')}
+                src={getImagePath('Images/shafqatdev2.png')}
                 alt="Shafqat Ullah - Senior Full Stack MERN Developer"
                 onError={(e) => {
                   e.target.onerror = null;
@@ -135,7 +135,7 @@ const About = ({ onOpenOrderModal }) => {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => onOpenOrderModal()}
-                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-all"
+                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-black font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-all"
               >
                 Order Custom Web App
               </button>

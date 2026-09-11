@@ -142,7 +142,7 @@ const Chatbot = ({ onOpenOrderModal }) => {
         {!isOpen && (
           <button
             onClick={() => setIsOpen(true)}
-            className="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-primary via-secondary to-accent text-white shadow-2xl shadow-primary/60 hover:scale-110 active:scale-95 transition-all duration-300 ring-4 ring-primary/30"
+            className="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-primary via-secondary to-accent text-black shadow-2xl shadow-primary/60 hover:scale-110 active:scale-95 transition-all duration-300 ring-4 ring-primary/30"
             aria-label="Help & Live AI Support Assistant"
             title="Chat with Shafqat AI Assistant"
           >
@@ -175,9 +175,9 @@ const Chatbot = ({ onOpenOrderModal }) => {
         } ${isMinimized ? 'h-16' : 'h-[calc(100dvh-6rem)] sm:h-[530px] max-h-[82vh]'}`}>
           
           {/* Header */}
-          <div className="px-4 sm:px-5 py-3.5 sm:py-4 bg-gradient-to-r from-primary via-secondary to-accent text-white flex items-center justify-between shadow-md shrink-0">
+          <div className="px-4 sm:px-5 py-3.5 sm:py-4 bg-gradient-to-r from-primary via-secondary to-accent text-black flex items-center justify-between shadow-md shrink-0">
             <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white font-bold border border-white/30 shrink-0 p-1">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-black font-bold border border-white/30 shrink-0 p-1">
                 <img src={getImagePath('Images/chatbot-avatar.png')} alt="AI Robot Logo" className="w-full h-full object-contain" />
                 <Sparkles className="w-3 h-3 text-amber-300 absolute -top-0.5 -right-0.5" />
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 border-2 border-slate-900"></span>
@@ -190,7 +190,7 @@ const Chatbot = ({ onOpenOrderModal }) => {
               </div>
             </div>
 
-            <div className="flex items-center gap-1.5 text-white shrink-0">
+            <div className="flex items-center gap-1.5 text-black shrink-0">
               <button
                 onClick={() => setIsMinimized(!isMinimized)}
                 className="p-1.5 rounded-lg hover:bg-white/20 transition"
@@ -228,7 +228,7 @@ const Chatbot = ({ onOpenOrderModal }) => {
 
                     <div className={`max-w-[85%] sm:max-w-[82%] rounded-2xl px-3.5 sm:px-4 py-2.5 sm:py-3 shadow-sm ${
                       msg.sender === 'user'
-                        ? 'bg-gradient-to-r from-primary to-secondary text-white rounded-tr-none'
+                        ? 'bg-gradient-to-r from-primary to-secondary text-black rounded-tr-none'
                         : isDark
                           ? 'bg-slate-800 border border-slate-700 text-slate-200 rounded-tl-none'
                           : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none'
@@ -271,7 +271,7 @@ const Chatbot = ({ onOpenOrderModal }) => {
                     className={`px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold whitespace-nowrap transition border ${
                       isDark 
                         ? 'bg-slate-800 border-slate-700 text-slate-300 hover:bg-primary hover:text-white' 
-                        : 'bg-white border-slate-300 text-slate-700 hover:bg-primary hover:text-white'
+                        : 'bg-white border-slate-300 text-slate-700 hover:bg-primary hover:text-black'
                     }`}
                   >
                     {q}
@@ -306,7 +306,7 @@ const Chatbot = ({ onOpenOrderModal }) => {
 
                 <button
                   onClick={() => handleSend()}
-                  className="p-2 sm:p-2.5 rounded-xl bg-primary hover:bg-secondary text-white font-bold transition shadow-md shrink-0"
+                  className="p-2 sm:p-2.5 rounded-xl bg-primary hover:bg-secondary text-black font-bold transition shadow-md shrink-0"
                   title="Send Message"
                 >
                   <Send className="w-4 h-4" />

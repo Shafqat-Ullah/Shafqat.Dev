@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -20,6 +20,17 @@ function AppContent() {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState('');
 
+  // Always open on the Home page on fresh load
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }, []);
+
   const handleOpenOrderModal = (pkgName = '') => {
     setSelectedPackage(pkgName);
     setIsOrderModalOpen(true);
@@ -31,7 +42,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen font-sans selection:bg-primary selection:text-white transition-colors duration-300 overflow-x-hidden relative">
+    <div className="min-h-screen font-sans bg-noise text-day-text dark:text-night-text selection:bg-primary selection:text-black transition-colors duration-300 overflow-x-hidden relative">
       {/* Navigation */}
       <Navbar onOpenOrderModal={handleOpenOrderModal} />
 

@@ -108,7 +108,7 @@ const Services = ({ onOpenOrderModal }) => {
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3.5 sm:px-4 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-extrabold text-[10px] sm:text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5 whitespace-nowrap z-10 shrink-0">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3.5 sm:px-4 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5 whitespace-nowrap z-10 shrink-0">
                     <Sparkles className="w-3.5 h-3.5" /> Most Popular Choice
                   </div>
                 )}
@@ -153,10 +153,10 @@ const Services = ({ onOpenOrderModal }) => {
                   onClick={() => onOpenOrderModal(pkg.name)}
                   className={`w-full py-4 rounded-2xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg ${
                     pkg.popular
-                      ? 'bg-gradient-to-r from-primary via-secondary to-accent text-white shadow-primary/30 hover:scale-105'
+                      ? 'bg-gradient-to-r from-primary via-secondary to-accent text-black shadow-primary/30 hover:scale-105'
                       : isDark
-                        ? 'bg-slate-800 text-white hover:bg-primary'
-                        : 'bg-slate-900 text-white hover:bg-primary'
+                        ? 'bg-slate-800 text-white hover:bg-primary hover:text-black'
+                        : 'bg-slate-900 text-white hover:bg-primary hover:text-black'
                   }`}
                 >
                   <ShoppingBag className="w-4 h-4" />

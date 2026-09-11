@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Reveal = ({ children, delay = 0, className = '' }) => {
+const Reveal = ({ children, delay = 0, direction = 'up', className = '' }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -24,10 +24,17 @@ const Reveal = ({ children, delay = 0, className = '' }) => {
     return () => observer.disconnect();
   }, []);
 
+  const directionClass = {
+    up: 'reveal-up',
+    down: 'reveal-down',
+    left: 'reveal-left',
+    right: 'reveal-right',
+  }[direction] || 'reveal-up';
+
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? 'reveal-visible' : ''} ${className}`}
+      className={`reveal ${visible ? 'reveal-visible' : directionClass} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

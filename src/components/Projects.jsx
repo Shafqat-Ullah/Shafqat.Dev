@@ -832,7 +832,7 @@ const Projects = ({ onOpenOrderModal }) => {
                 onClick={() => handleFilterChange(item.id)}
                 className={`shrink-0 px-4 py-2.5 sm:px-5 rounded-full text-xs font-bold transition-all duration-300 whitespace-nowrap ${
                   filter === item.id
-                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30 scale-105 ring-2 ring-primary/30'
+                    ? 'bg-gradient-to-r from-primary to-secondary text-black shadow-lg shadow-primary/30 scale-105 ring-2 ring-primary/30'
                     : isDark
                       ? 'bg-slate-900/90 border border-slate-800 text-slate-300 hover:border-primary/50 hover:text-white'
                       : 'bg-white border border-slate-200 text-slate-700 hover:border-primary/50 shadow-sm'
@@ -885,7 +885,7 @@ const Projects = ({ onOpenOrderModal }) => {
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button
                       onClick={() => openProjectModal(project)}
-                      className="px-4 py-2 rounded-full bg-primary/90 text-white font-bold text-xs flex items-center gap-2 backdrop-blur-md shadow-xl hover:bg-primary transition-all"
+                      className="px-4 py-2 rounded-full bg-primary/90 text-black font-bold text-xs flex items-center gap-2 backdrop-blur-md shadow-xl hover:bg-primary transition-all"
                     >
                       <Eye className="w-4 h-4" /> Quick Preview
                     </button>
@@ -963,7 +963,7 @@ const Projects = ({ onOpenOrderModal }) => {
               {visibleCount < filteredProjects.length && (
                 <button
                   onClick={() => setVisibleCount(prev => Math.min(prev + 3, filteredProjects.length))}
-                  className="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-extrabold text-sm shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all flex items-center gap-2"
+                  className="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-black font-extrabold text-sm shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all flex items-center gap-2"
                 >
                   Show More Projects <ChevronDown className="w-4 h-4 animate-bounce" />
                 </button>
@@ -1004,7 +1004,7 @@ const Projects = ({ onOpenOrderModal }) => {
                 <button
                   onClick={() => setActiveModalTab('overview')}
                   className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 transition ${
-                    activeModalTab === 'overview' ? 'bg-primary text-white' : 'text-slate-400 hover:text-white'
+                    activeModalTab === 'overview' ? 'bg-primary text-black' : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   <ImageIcon className="w-3.5 h-3.5" /> Overview
@@ -1012,7 +1012,7 @@ const Projects = ({ onOpenOrderModal }) => {
                 <button
                   onClick={() => setActiveModalTab('live')}
                   className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 transition ${
-                    activeModalTab === 'live' ? 'bg-primary text-white' : 'text-slate-400 hover:text-white'
+                    activeModalTab === 'live' ? 'bg-primary text-black' : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   <Monitor className="w-3.5 h-3.5" /> Live Preview
@@ -1022,7 +1022,7 @@ const Projects = ({ onOpenOrderModal }) => {
               <button
                 onClick={() => setSelectedProject(null)}
                 aria-label="Close project details"
-                className="w-10 h-10 shrink-0 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 active:scale-95 transition shadow-lg border border-white/20"
+                className="w-10 h-10 shrink-0 rounded-full bg-primary text-black flex items-center justify-center hover:bg-primary/90 active:scale-95 transition shadow-lg border border-black/10"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1079,7 +1079,7 @@ const Projects = ({ onOpenOrderModal }) => {
                   href={selectedProject.liveDemo}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-primary text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:bg-primary/90"
+                  className="px-5 py-2.5 rounded-full bg-primary text-black font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:bg-primary/90"
                 >
                   <ExternalLink className="w-4 h-4" /> Open In New Tab
                 </a>

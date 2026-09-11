@@ -90,7 +90,7 @@ const FAQ = ({ onOpenOrderModal }) => {
                     {faq.question}
                   </span>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                    isOpen ? 'bg-primary text-white rotate-180' : isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-600'
+                    isOpen ? 'bg-primary text-black rotate-180' : isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-600'
                   }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>
@@ -124,7 +124,7 @@ const FAQ = ({ onOpenOrderModal }) => {
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
               onClick={() => onOpenOrderModal()}
-              className="px-6 py-3.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-white font-extrabold text-sm shadow-lg shadow-primary/25 hover:scale-105 transition-transform flex items-center gap-2"
+              className="px-6 py-3.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-black font-extrabold text-sm shadow-lg shadow-primary/25 hover:scale-105 transition-transform flex items-center gap-2"
             >
               <ShoppingBag className="w-4 h-4" /> Place Order Now
             </button>
